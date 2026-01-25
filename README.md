@@ -17,7 +17,7 @@ Vous trouverez ici toutes les ressources relatives à mes conférences.
 
 | 📅 Date                     | 🗣️ Événement            | 📍 Lieu                                      | 📺 Rediffusion                       |
 |--------------------------|----------------------|-------------------------------------------|-----------------------------------|
-| Dimanche 11 janvier 2026 | Université Populaire des Aurores | Mercure Hôtel Centre Comédie, Montpellier | *(non disponible pour le moment)* |
+| Dimanche 11 janvier 2026 | Université Populaire des Aurores | Mercure Hôtel Centre Comédie, Montpellier | [Voir sur YouTube](https://www.youtube.com/watch?v=9Upu_bC3yQk) |
 
 ## ✉️ Contact
 
