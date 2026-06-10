@@ -1,15 +1,21 @@
 // Google Test example
-TEST(example_tests, transient_constexpr_evaluation)
-{
-    CONSTEXPR_SECTION("std::sort and std::find")
+TEST(example_tests, various_undefined_behavior) {
+    CONSTEXPR_SECTION("Out of bounds") {
+        std::vector vec = {1, 2, 3};
+        CONSTEXPR_EXPECT_EQ(vec[3], 3); // ❌ compilation error
+    };
+        
+    CONSTEXPR_SECTION("Double delete")
     {
-        std::vector vec = {5, 2, 8, 1, 9};
-        std::ranges::sort(vec);
+        auto* const a = new int{ 10 };
+        delete a;
+        delete a; // ❌ compilation error
+    };
 
-        CONSTEXPR_EXPECT_EQ(vec[0], 1);
-        CONSTEXPR_EXPECT_EQ(vec[4], 9);
-
-        auto it = std::ranges::find(vec, 8);
-        CONSTEXPR_ASSERT_TRUE(it != vec.end());
+    CONSTEXPR_SECTION("Use after free")
+    {
+        auto* const a = new int{ 10 };
+        delete a;
+        auto b = *a + 1; // ❌ compilation error
     };
 }
